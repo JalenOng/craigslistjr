@@ -1,0 +1,19 @@
+<div class="container">
+  <h1>Posts in  <%= @name %> </h1>
+
+  <% Post.where(category_id: params["id"].to_i).each do |post| %>
+  <p><%= post.title %></p>
+  <p><%= post.poster %></p>
+  <% end %>
+
+  <h1>Post on Craigslist! </h1>
+
+  <form action="/categories/<%= params["id"] %>/posts/key" method ="post">
+  <textarea cols="40" rows="5" name="post[title]">
+Insert your posting title.
+  </textarea>
+  <input type="text" name="post[poster]" value="Insert name here.">
+  <input type="submit" value="Flaunt it!!">
+  </form>
+
+</div>

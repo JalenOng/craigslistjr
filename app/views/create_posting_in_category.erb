@@ -1,0 +1,14 @@
+<div class="container">
+  <h1>Welcome to Craiglist Jr.!</h1>
+  <form action="/categories" method="post">
+  <select name="foods">
+    <% Category.all.each do |category| %>
+    <option value=category.name><%= category.name %></option>
+    <% end %>
+  </select>
+<!--   <input type="text" name="user_input"> -->
+  <input type="submit" value="Craiglist It!">
+</form>
+</div>
+
+
